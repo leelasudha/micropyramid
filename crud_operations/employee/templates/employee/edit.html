@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit</title>
+</head>
+<body>
+	<center>
+		<h2 class= 'bg bg-success'>Edit {{data.fname}} details</h2>
+		<form action="{% url 'edit' data.id %}" method = "POST">
+			{% csrf_token %}
+			First Name: <input type="text" name="fname" class= 'form-control' value = {{data.fname}}><br>
+			Last  Name: <input type="text" name="lname" class= 'form-control' value= {{data.lname}}><br>
+			Email: <input type="email" name="email" class= 'form-control' value={{data.email}}><br>
+			Mobile: <input type="integer" name="mobile" class= 'form-control' value={{data.mobile}}><br>
+			<br><br>
+			<input type="submit" name="submit" value='update'>
+		</form>
+	</center>
+</body>
+</html>

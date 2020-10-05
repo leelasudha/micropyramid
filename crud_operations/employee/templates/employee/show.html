@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee</title>
+</head>
+<body>
+   <table>
+   	<h2>List of Employees</h2>
+   	<tr>
+   		<th>Firstname</th>
+   		<th>Lastname</th>
+   		<th>Email</th>
+   		<th>Mobile</th>
+   	</tr>
+   	{% for i in data %}
+   	<tr>
+   		<td>{{i.fname}}</td>
+   		<td>{{i.lname}}</td>
+   		<td>{{i.email}}</td>
+   		<td>{{i.mobile}}</td>
+   		<td><a href="{% url 'edit' i.id %}">Edit</a></td>
+   		<td><a href="{% url 'delete' i.id %}">Delete</a></td>
+   	</tr>
+   	{% endfor%}
+   </table>
+</body>
+</html>
